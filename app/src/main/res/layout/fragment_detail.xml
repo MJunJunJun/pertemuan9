@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.detail.DetailFragment">
+
     <TextView
         android:id="@+id/txtnim"
         android:layout_width="wrap_content"
@@ -16,6 +17,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
     <TextView
         android:id="@+id/txtnama"
         android:layout_width="wrap_content"
@@ -25,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtnim" />
+
     <TextView
         android:id="@+id/txtTelepon"
         android:layout_width="wrap_content"
@@ -35,4 +39,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtnama" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

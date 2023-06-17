@@ -2,11 +2,10 @@ package com.junaedi.pertemuan9.model.response
 
 
 import com.google.gson.annotations.SerializedName
-import com.junaedi.pertemuan9.model.request.DetailDataMahasiswa
 
-data class ResponseDetailMahasiswa(
+data class ResponseDataUpdateMahasiswa(
     @SerializedName("data")
-    val data: DetailDataMahasiswa,
+    val data: String,
     @SerializedName("status")
     val status: String
 )

@@ -12,24 +12,25 @@ import com.junaedi.pertemuan9.databinding.FragmentDetailBinding
 import com.junaedi.pertemuan9.viewmodel.ViewModelMahasiswa
 
 class DetailFragment : Fragment() {
-
-    lateinit var binding:FragmentDetailBinding
+    lateinit var viewModel : ViewModelMahasiswa
+    lateinit var binding : FragmentDetailBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentDetailBinding.inflate(inflater, container, false)
+        binding = FragmentDetailBinding.inflate(layoutInflater,container,false)
         return binding.root
+
     }
 
-    override fun onViewCreated(view: View,savedInstanceState: Bundle?){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val nim=arguments?.getString("nim")
+        val nim = arguments?.getString("nim")
 
-        val viewModel=ViewModelProvider(this).get(ViewModelMahasiswa::class.java)
-        viewModel.getDetailDataMahasiswa().observe(viewLifecycleOwner){
-            if(it!=null){
+        viewModel = ViewModelProvider(requireActivity()).get(ViewModelMahasiswa::class.java)
+        viewModel.getDetailMahasiswa().observe(viewLifecycleOwner){
+            if (it != null){
                 binding.txtnim.text = it.data?.nIM
                 binding.txtnama.text = it.data?.nama
                 binding.txtTelepon.text = it.data?.telepon
@@ -38,7 +39,6 @@ class DetailFragment : Fragment() {
             }
         }
         viewModel.getDetailData(nim!!)
-
     }
 
 }
